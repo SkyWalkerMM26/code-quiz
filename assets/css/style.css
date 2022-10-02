@@ -1,3 +1,13 @@
 .hidden {
     display: none;
 }
+
+body {
+    display:block;
+    align-content: center;
+    justify-content: center; 
+    text-align: center;
+    padding: 5em;
+    margin: 4em;
+    background-color: pink;
+}
