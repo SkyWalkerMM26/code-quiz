@@ -55,4 +55,24 @@ choice2.addEventListener("click", nextquestion)
 choice3.addEventListener("click", nextquestion)
 choice4.addEventListener("click", nextquestion)
 
+function nextquestion (event){
+    startdiv.classList.add("hidden")
+    questiondiv.classList.remove("hidden")
+    questiontext.textContent=questions [currentQuestion].question;
+    choice1.textContent= questions [currentQuestion].choices[0]
+    choice2.textContent= questions [currentQuestion].choices[1]
+    choice3.textContent= questions [currentQuestion].choices[2]
+    choice4.textContent= questions [currentQuestion].choices[3]
+    console.log(event);
+    if (event.target.textContent == questions[currentQuestion].answer){
+        alert("Correct")
+        
+    }else{
+        alert("Incorrect")
+    }
+
+    if(event.target.textContent != "START") {
+        currentQuestion++;
+      }
+}
 
