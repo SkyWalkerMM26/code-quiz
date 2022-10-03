@@ -78,7 +78,10 @@ var questions = [
     }, 
 ]
 
-var currentQuestion = 0
+var currentQuestion = 0;
+var currentAnswer = 0;
+var correctAnswers = 0;
+var wrongAnswers = 0;
 
 var timer = document.querySelector("#time");
 var startdiv = document.querySelector("#begin");
@@ -89,10 +92,13 @@ var choice1 = document.querySelector("#choice-1");
 var choice2 = document.querySelector("#choice-2");
 var choice3 = document.querySelector("#choice-3");
 var choice4 = document.querySelector("#choice-4");
-var scorecard = document.querySelector("#scorecard");
+var final = document.querySelector("#final");
 var score = document.querySelector("#scoretext");
 var initials = document.querySelector("#initials");
 var save = document.querySelector("#endsave");
+var scoreCard = document.querySelector("#scoreCard");
+var correctAns = document.querySelector("#correct");
+var wrongAns = document.querySelector("#wrong");
 
 
 startbtn.addEventListener("click", nextquestion)
@@ -114,11 +120,12 @@ function setTime(event){
             clearInterval(timerInterval);
             alert("Time's Up! Please enter your name initials");
             questiondiv.classList.add("hidden")
-            scorecard.classList.remove("hidden")
+            final.classList.remove("hidden")
         }
     }, 1000);
-    event.preventDefault();
+
 }
+    
 
 function nextquestion (event){
     startdiv.classList.add("hidden")
@@ -131,11 +138,22 @@ function nextquestion (event){
     console.log(event);
 
     currentQuestion++
-    
+       
     if(currentQuestion == 11){
         questiondiv.classList.add("hidden")
-        scorecard.classList.remove("hidden")
+        final.classList.remove("hidden")
+    }
+    
+    if (event.target.textContent == questions[currentAnswer].answer){
+
+        document.getElementById("correct").innerHTML = ++correctAnswers;
     }
 }
-setTime();
-    
+ 
+save.addEventListener("click", result)
+
+function result (event){
+    final.classList.add("hidden")
+    scoreCard.classList.remove("hidden")
+    console.log(event);
+}
