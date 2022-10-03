@@ -1,5 +1,5 @@
 :root{
-    --backgound: pink;
+    --backgound: rgb(234, 202, 207);
 }
 
 .hidden {
@@ -17,8 +17,10 @@ section {
     text-align: center;
     padding: 5em;
     margin: 5em;
+    height: 600px;
     background-color: var(--backgound);
     border: 3px dashed white;
+    border-radius: 100px;
 }
 
 #time {

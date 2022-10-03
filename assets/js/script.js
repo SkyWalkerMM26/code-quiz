@@ -110,14 +110,15 @@ function setTime(event){
         secondsLeft--;
         timer.textContent = secondsLeft + " sec";
 
-        if(secondsLeft === 0){
+        if(secondsLeft === 0 || currentQuestion == 11){
             clearInterval(timerInterval);
-            alert("Time's Up!");
+            alert("Time's Up! Please enter your name initials");
+            questiondiv.classList.add("hidden")
+            scorecard.classList.remove("hidden")
         }
     }, 1000);
     event.preventDefault();
 }
-
 
 function nextquestion (event){
     startdiv.classList.add("hidden")
@@ -130,16 +131,11 @@ function nextquestion (event){
     console.log(event);
 
     currentQuestion++
-
     
-
     if(currentQuestion == 11){
         questiondiv.classList.add("hidden")
         scorecard.classList.remove("hidden")
     }
-            
-
-
 }
 setTime();
     
