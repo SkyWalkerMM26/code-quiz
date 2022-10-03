@@ -67,15 +67,12 @@ var questions = [
         answer: "1"//have to be the correct answer
     }, 
     {
-        question: "placeholder question 10",
-        choices: ["1","2","3","4"],
-        answer: "1"//have to be the correct answer
+        question: "DONE",
+        choices: ["Done"],
+        answer: "Done"// end of questions!
     },
-    {
-        question: "",
-        choices: ["1","2","3","4"],
-        answer: "1"//have to be the correct answer
-    }, 
+   
+    
 ]
 
 var currentQuestion = 0;
@@ -108,7 +105,7 @@ choice2.addEventListener("click", nextquestion)
 choice3.addEventListener("click", nextquestion)
 choice4.addEventListener("click", nextquestion)
 
-var secondsLeft = 10;
+var secondsLeft = 11;
 
 function setTime(event){
     event.preventDefault();
@@ -118,7 +115,7 @@ function setTime(event){
 
         if(secondsLeft === 0 || currentQuestion == 11){
             clearInterval(timerInterval);
-            alert("Time's Up! Please enter your name initials");
+            alert("Please enter your initials to view your score");
             questiondiv.classList.add("hidden")
             final.classList.remove("hidden")
         }
@@ -147,6 +144,13 @@ function nextquestion (event){
     if (event.target.textContent == questions[currentAnswer].answer){
 
         document.getElementById("correct").innerHTML = ++correctAnswers;
+    }else{
+    
+    if (event.target.textContent !== questions[currentAnswer].answer){
+        document.getElementById("wrong").innerHTML = ++wrongAnswers -1;
+  
+    currentAnswer++
+}
     }
 }
  
@@ -157,3 +161,4 @@ function result (event){
     scoreCard.classList.remove("hidden")
     console.log(event);
 }
+
