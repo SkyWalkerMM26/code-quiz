@@ -1,13 +1,33 @@
+:root{
+    --backgound: pink;
+}
+
 .hidden {
     display: none;
 }
 
-body {
+* {
+    background-color: var(--backgound);
+}
+
+section {
     display:block;
     align-content: center;
     justify-content: center; 
     text-align: center;
     padding: 5em;
-    margin: 4em;
-    background-color: pink;
+    margin: 5em;
+    background-color: var(--backgound);
+    border: 3px dashed white;
+}
+
+#time {
+    background-color: var(--backgound);
+    width: 70px;
+    height: 30px;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    margin: 40px;
+    
 }

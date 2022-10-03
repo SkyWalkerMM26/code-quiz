@@ -70,11 +70,17 @@ var questions = [
         question: "placeholder question 10",
         choices: ["1","2","3","4"],
         answer: "1"//have to be the correct answer
+    },
+    {
+        question: "",
+        choices: ["1","2","3","4"],
+        answer: "1"//have to be the correct answer
     }, 
 ]
 
 var currentQuestion = 0
 
+var timer = document.querySelector("#time");
 var startdiv = document.querySelector("#begin");
 var startbtn = document.querySelector("#submit");
 var questiondiv = document.querySelector("#question");
@@ -90,29 +96,50 @@ var save = document.querySelector("#endsave");
 
 
 startbtn.addEventListener("click", nextquestion)
+startbtn.addEventListener("click", setTime)
 choice1.addEventListener("click", nextquestion)
 choice2.addEventListener("click", nextquestion)
 choice3.addEventListener("click", nextquestion)
 choice4.addEventListener("click", nextquestion)
 
+var secondsLeft = 10;
+
+function setTime(event){
+    event.preventDefault();
+    var timerInterval = setInterval(function(){
+        secondsLeft--;
+        timer.textContent = secondsLeft + " sec";
+
+        if(secondsLeft === 0){
+            clearInterval(timerInterval);
+            alert("Time's Up!");
+        }
+    }, 1000);
+    event.preventDefault();
+}
+
+
 function nextquestion (event){
     startdiv.classList.add("hidden")
     questiondiv.classList.remove("hidden")
-    questiontext.textContent=questions [currentQuestion].question;
+    questiontext.textContent= questions [currentQuestion].question;
     choice1.textContent= questions [currentQuestion].choices[0]
     choice2.textContent= questions [currentQuestion].choices[1]
     choice3.textContent= questions [currentQuestion].choices[2]
     choice4.textContent= questions [currentQuestion].choices[3]
     console.log(event);
-    if (event.target.textContent == questions[currentQuestion].answer){
-        alert("Correct")
-        
-    }else{
-        alert("Incorrect")
+
+    currentQuestion++
+
+    
+
+    if(currentQuestion == 11){
+        questiondiv.classList.add("hidden")
+        scorecard.classList.remove("hidden")
     }
+            
 
-    if(event.target.textContent != "START") {
-        currentQuestion++;
-      }
+
 }
-
+setTime();
+    
