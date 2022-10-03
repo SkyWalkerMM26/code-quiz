@@ -31,6 +31,46 @@ var questions = [
         choices: ["1","2","3","4"],
         answer: "1"//have to be the correct answer
     }, 
+    {
+        question: "placeholder question 3",
+        choices: ["1","2","3","4"],
+        answer: "1"//have to be the correct answer
+    }, 
+    {
+        question: "placeholder question 4",
+        choices: ["1","2","3","4"],
+        answer: "1"//have to be the correct answer
+    }, 
+    {
+        question: "placeholder question 5",
+        choices: ["1","2","3","4"],
+        answer: "1"//have to be the correct answer
+    }, 
+    {
+        question: "placeholder question 6",
+        choices: ["1","2","3","4"],
+        answer: "1"//have to be the correct answer
+    }, 
+    {
+        question: "placeholder question 7",
+        choices: ["1","2","3","4"],
+        answer: "1"//have to be the correct answer
+    }, 
+    {
+        question: "placeholder question 8",
+        choices: ["1","2","3","4"],
+        answer: "1"//have to be the correct answer
+    }, 
+    {
+        question: "placeholder question 9",
+        choices: ["1","2","3","4"],
+        answer: "1"//have to be the correct answer
+    }, 
+    {
+        question: "placeholder question 10",
+        choices: ["1","2","3","4"],
+        answer: "1"//have to be the correct answer
+    }, 
 ]
 
 var currentQuestion = 0
