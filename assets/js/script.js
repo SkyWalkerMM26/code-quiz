@@ -67,6 +67,11 @@ var questions = [
         answer: "1"//have to be the correct answer
     }, 
     {
+        question: "placeholder question 10",
+        choices: ["1","2","3","4"],
+        answer: "1"//have to be the correct answer
+    },
+    {
         question: "DONE",
         choices: ["Done"],
         answer: "Done"// end of questions!
@@ -133,14 +138,14 @@ function nextquestion (event){
     choice3.textContent= questions [currentQuestion].choices[2]
     choice4.textContent= questions [currentQuestion].choices[3]
     console.log(event);
-
+   
     currentQuestion++
-       
+
     if(currentQuestion == 11){
         questiondiv.classList.add("hidden")
         final.classList.remove("hidden")
     }
-    
+       
     if (event.target.textContent == questions[currentAnswer].answer){
 
         document.getElementById("correct").innerHTML = ++correctAnswers;
@@ -148,11 +153,12 @@ function nextquestion (event){
     
     if (event.target.textContent !== questions[currentAnswer].answer){
         document.getElementById("wrong").innerHTML = ++wrongAnswers -1;
-  
+        }
     currentAnswer++
-}
     }
 }
+
+
  
 save.addEventListener("click", result)
 
@@ -160,5 +166,6 @@ function result (event){
     final.classList.add("hidden")
     scoreCard.classList.remove("hidden")
     console.log(event);
+    document.getElementById("scoretext").innerHTML = 
 }
 
