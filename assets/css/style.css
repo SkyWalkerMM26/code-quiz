@@ -11,25 +11,28 @@
 }
 
 section {
-    display:block;
+    display: block;
+    justify-content: center;
     align-content: center;
     justify-content: center; 
     text-align: center;
-    padding: 5em;
-    margin: 5em;
-    height: 600px;
+    padding: 2em;
+    margin: 2em;
+    height: 500px;
     background-color: var(--backgound);
     border: 3px dashed white;
     border-radius: 100px;
 }
 
 #time {
-    background-color: var(--backgound);
-    width: 70px;
-    height: 30px;
+    background-image: url(https://user-images.githubusercontent.com/113512061/193527421-ebc33d2c-ae59-4dc7-8084-2e8bf249e1f2.png);
+    background-repeat: no-repeat;
+    border-radius: 300px;
+    width: 180px;
+    height: 180px;
     font-size: 20px;
     text-align: center;
-    padding: 10px;
-    margin: 40px;
+    
+  
     
 }

@@ -73,7 +73,7 @@ var questions = [
     },
     {
         question: "DONE",
-        choices: ["Done"],
+        choices: ["1","2","3","4"],
         answer: "Done"// end of questions!
     },
    
@@ -166,6 +166,6 @@ function result (event){
     final.classList.add("hidden")
     scoreCard.classList.remove("hidden")
     console.log(event);
-    document.getElementById("scoretext").innerHTML = 
+    
 }
 
