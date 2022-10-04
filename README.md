@@ -14,4 +14,4 @@ Tools used : Git, Github, and VS Code.
 Author: Mai Moua
 
 LICENSE
-*MIT
+* MIT
