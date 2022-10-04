@@ -9,7 +9,7 @@ The purpose of this project is to generate a quiz and give the user their score 
 * Press Start
 * Go through the questions.
 * Input your initials.
-* See how you did.
+* Your scores and initials will show.
 
 Tools used : Git, Github, and VS Code.
 
