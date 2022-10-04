@@ -101,7 +101,7 @@ var save = document.querySelector("#endsave");
 var scoreCard = document.querySelector("#scoreCard");
 var correctAns = document.querySelector("#correct");
 var wrongAns = document.querySelector("#wrong");
-
+var oldscorebtn = document.querySelector("#oldscorebtn");
 
 startbtn.addEventListener("click", nextquestion)
 startbtn.addEventListener("click", setTime)
@@ -127,7 +127,6 @@ function setTime(event){
     }, 1000);
 
 }
-    
 
 function nextquestion (event){
     startdiv.classList.add("hidden")
@@ -156,6 +155,7 @@ function nextquestion (event){
         }
     currentAnswer++
     }
+    scoreStorage();
 }
 
 function saveInitials(){
@@ -172,6 +172,11 @@ function renderSaveInitials (){
     }
 }
 
+function scoreStorage (){
+    var correctScore = document.getElementById("correct").textContent; 
+   localStorage.setItem("correctScore", JSON.stringify(correctScore));
+   
+}
 
 
 save.addEventListener("click", result)
@@ -186,6 +191,8 @@ function result (event){
     }
     saveInitials();
     renderSaveInitials();
-
+    
 }
+
+
 
