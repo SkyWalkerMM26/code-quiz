@@ -33,6 +33,29 @@ section {
     font-size: 20px;
     text-align: center;
     
-  
-    
+}
+
+#choice-1 {
+    width: 60px;
+    height: 30px;
+    font-size: 20px;
+    align-items: center;
+}
+#choice-2 {
+    width: 60px;
+    height: 30px;
+    font-size: 20px;
+    align-items: center;
+}
+#choice-3 {
+    width: 60px;
+    height: 30px;
+    font-size: 20px;
+    align-items: center;
+}
+#choice-4 {
+    width: 60px;
+    height: 30px;
+    font-size: 20px;
+    align-items: center;
 }

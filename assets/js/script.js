@@ -1,8 +1,13 @@
 // peusdocode
-// First, let's set our variables to refer to the index.html by document.querySelector().
-// When the User clicks the Start button, the function setInterval starts.
-// Simultaneously there should be a question that appears on the page for the user to start the quiz.
-// These questions are set up by funcitons. 
+// When the User clicks the Start button, the timer setInterval starts.
+// Create variables for the questions, choices, and answers for the quiz and set them as objects. 
+// Let's set our variables document.querySelector() to refer to the HTML file.
+// The user should see a page with a question and 4 possible answer choices (buttons).
+// When the user "click" on an answer button, the next question should appear.
+// If the user completes before the timer ends, an alert should pop up to stop the quiz and ask the user to input their initials. 
+// If the user runs out of time, an alert will pop up to stop the quiz and ask the user to input their initials.
+// once the user enter their initials, they will click the submit button.
+// This submit button will
 // There should be functions to generate the questions and store the results.
 // There should be an addEvent Listener("click", showRespone) t
 // 
@@ -10,12 +15,12 @@
 //this an array of objects. These objects are the questions/answers for the quiz.
 var questions = [
     {
-        question: "What special character comes after this 'function Mocossi()_'<--?",
-        choices: [";",",","{",")"],
-        answer: "{" //have to be the correct answer
+        question: "What is var?",
+        choices: ["1","2","3","4"],
+        answer: "1"//have to be the correct answer
     },
     {
-        question: "placeholder question 2",
+        question: "What is var?",
         choices: ["1","2","3","4"],
         answer: "1"//have to be the correct answer
     }, 
@@ -104,7 +109,7 @@ choice4.addEventListener("click", nextquestion)
 
 
 //this is the time interval set for this quiz.
-var secondsLeft = 11;
+var secondsLeft = 60;
 
 function setTime(event){
     event.preventDefault();
@@ -151,9 +156,9 @@ function nextquestion (event){
     if (event.target.textContent !== questions[currentAnswer].answer){
         document.getElementById("wrong").innerHTML = ++wrongAnswers -1;
         }
-    currentAnswer++
-    }
     
+    }
+    scoreStorage();
 }
 
 //this saves the user correct scores in the local storage.
@@ -192,7 +197,7 @@ function result (event){
     }
     saveInitials();
     renderSaveInitials();
-    scoreStorage();
+   
 }
 
 
