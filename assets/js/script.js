@@ -7,20 +7,19 @@
 // If the user completes before the timer ends, an alert should pop up to stop the quiz and ask the user to input their initials. 
 // If the user runs out of time, an alert will pop up to stop the quiz and ask the user to input their initials.
 // once the user enter their initials, they will click the submit button.
-// This submit button will
-// There should be functions to generate the questions and store the results.
-// There should be an addEvent Listener("click", showRespone) t
-// 
+// This submit button will show the user their scores and initials.
+
+
 
 //this an array of objects. These objects are the questions/answers for the quiz.
 var questions = [
     {
-        question: "What is var?",
+        question: "placeholder question 1",
         choices: ["1","2","3","4"],
         answer: "1"//have to be the correct answer
     },
     {
-        question: "What is var?",
+        question: "placeholder question 2",
         choices: ["1","2","3","4"],
         answer: "1"//have to be the correct answer
     }, 
