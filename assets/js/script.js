@@ -158,14 +158,34 @@ function nextquestion (event){
     }
 }
 
+function saveInitials(){
+    var userInitials = document.getElementById("initials").value;
+    localStorage.setItem("userInitials", JSON.stringify(userInitials));
+}
 
- 
+function renderSaveInitials (){
+    var lastInitials = JSON.parse(localStorage.getItem("userInitials"));
+    if (lastInitials !== null){
+        document.getElementById("scoretext").innerHTML = "Initials: " + lastInitials;
+    }else{
+        return;
+    }
+}
+
+
+
 save.addEventListener("click", result)
 
 function result (event){
-    final.classList.add("hidden")
-    scoreCard.classList.remove("hidden")
-    console.log(event);
-    
+    if (document.getElementById("initials").value == ""){
+        alert("Please type in your initials.");
+    }
+    if (document.getElementById("initials").value !== ""){
+        final.classList.add("hidden")
+        scoreCard.classList.remove("hidden")
+    }
+    saveInitials();
+    renderSaveInitials();
+
 }
 
